@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install ${{ env.DEPENDENCY_FILE }}
+          pip install -r ${{ env.DEPENDENCY_FILE }}
 
   deploy:
     needs: build
