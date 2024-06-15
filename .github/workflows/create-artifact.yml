@@ -1,0 +1,30 @@
+name: Go app build (generate artifact)
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - usage: actions/checkout@v2
+
+      - name: Set up Go 1.15
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.15
+
+      - name: Build
+        run: go build -o app
+
+      - name: Archive production artifact
+        run: |
+          zip -r app.zip main.go app
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: app
+          path: app.zip
