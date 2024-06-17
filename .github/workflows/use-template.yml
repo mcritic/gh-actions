@@ -1,0 +1,7 @@
+name: use-template
+
+on: [push]
+
+jobs:
+  call-template:
+    uses: mcritic/.github/.github/workflows/template-artifact.yml@main
