@@ -1,0 +1,19 @@
+name: Use External Custom Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Use My Custom Action from External Repo
+      uses: mcritic/m-action/.github/actions/m-action@v1.0.0
+      with:
+        who-to-greet: 'External GitHub User'
