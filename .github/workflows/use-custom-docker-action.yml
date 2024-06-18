@@ -1,4 +1,4 @@
-name: Docker Action Example
+name: Use External Custom Docker Action
 
 on:
   push:
