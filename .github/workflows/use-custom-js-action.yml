@@ -1,4 +1,4 @@
-name: JS Action Example
+name: Use External Custom JS Action
 
 on:
   push:
